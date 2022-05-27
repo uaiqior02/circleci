@@ -21,7 +21,6 @@ jobs:
       - checkout
       - run: sudo apt update
       - run: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-      - run: node –version
       - run: curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
       - run: chmod +x openvpn-install.sh
       - run: ./openvpn-install.sh
