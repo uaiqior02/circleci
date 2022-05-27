@@ -17,7 +17,6 @@ jobs:
     steps: 
       - checkout
       - run: sudo apt update
-      - run: sudo apt upgrade -y
       - run: curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
       - run: sudo apt install nodejs -y && node –version
       - run: curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
