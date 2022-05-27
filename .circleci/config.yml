@@ -1,9 +1,6 @@
 working_dir: &working_dir ~/app
 
 version: 2.1
-
-orbs:
-  node: circleci/node@5.0.2
  
 workflows: 
   sample:   
@@ -13,8 +10,8 @@ workflows:
 jobs: 
   job:
     parallelism: 3
-    docker:
-      - image: cimg/node:18.2.0
+    machine:
+      image: ubuntu-2204:2022.04.1
     resource_class: xlarge
      
     steps: 
